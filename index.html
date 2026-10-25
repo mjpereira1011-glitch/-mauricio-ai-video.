@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101020"><meta name="description" content="Maurício AI Video — estúdio de criação de vídeos com IA.">
+<title>Maurício AI Video</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">✦</span><span>Maurício <b>AI Video</b></span></a><span class="pill">ESTÚDIO IA</span></header>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> SEU ESTÚDIO CRIATIVO</div>
+  <h1>Transforme ideias em<br><span>cenas cinematográficas.</span></h1>
+  <p>Crie um roteiro visual, prepare seu prompt e conecte um serviço de geração de vídeo por IA.</p>
+  <div class="hero-tags"><span>✦ Texto para vídeo</span><span>▧ Imagem para vídeo</span><span>▶ Formato vertical e horizontal</span></div>
+</section>
+<section class="studio">
+  <div class="section-heading"><div><div class="eyebrow">01 / CRIAÇÃO</div><h2>O que vamos criar?</h2></div><span class="step">PASSO 1 DE 2</span></div>
+  <div class="mode-switch" role="tablist" aria-label="Modo de criação">
+    <button class="mode active" data-mode="text" role="tab" aria-selected="true">✍️ <span>Texto para vídeo</span></button>
+    <button class="mode" data-mode="image" role="tab" aria-selected="false">▧ <span>Imagem para vídeo</span></button>
+  </div>
+  <form id="creatorForm">
+    <label for="prompt">Descreva sua cena</label>
+    <textarea id="prompt" rows="4" maxlength="1200" placeholder="Ex.: Um jogador de futebol entra lentamente em um estádio lotado à noite, luzes volumétricas, câmera acompanha o jogador por trás, gramado detalhado, visual de filme...">Um jogador de futebol entra lentamente em um estádio cinematográfico à noite. A câmera acompanha o jogador por trás, luzes fortes atravessam a fumaça, gramado detalhado, movimento suave, qualidade de filme.</textarea>
+    <div class="hint-row"><span>Seja específico sobre personagem, ação, câmera e iluminação.</span><span id="charCount">0/1200</span></div>
+    <div id="imageUploadWrap" class="upload-wrap hidden">
+      <label for="imageInput">Imagem de referência</label>
+      <label class="upload-box" for="imageInput"><span class="upload-icon">＋</span><strong>Escolher uma imagem</strong><small>JPG, PNG ou WEBP · a imagem fica no seu dispositivo até você conectar um serviço</small></label>
+      <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+      <div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="Prévia da imagem selecionada"><button type="button" id="removeImage" class="text-button">Remover imagem</button></div>
+    </div>
+    <div class="settings-grid">
+      <div><label for="ratio">Formato do vídeo</label><select id="ratio"><option value="16:9">16:9 · YouTube / filme</option><option value="9:16">9:16 · Reels / TikTok</option><option value="1:1">1:1 · Quadrado</option></select></div>
+      <div><label for="duration">Duração pretendida</label><select id="duration"><option value="5">5 segundos</option><option value="10">10 segundos</option><option value="15">15 segundos</option></select></div>
+      <div><label for="look">Estilo visual</label><select id="look"><option>Cinematográfico</option><option>Animação 3D</option><option>Realista</option><option>Fantasia épica</option></select></div>
+      <div><label for="camera">Movimento de câmera</label><select id="camera"><option>Seguir o personagem</option><option>Travelling para frente</option><option>Panorâmica suave</option><option>Plano fixo</option><option>Órbita ao redor</option></select></div>
+    </div>
+    <button class="primary" type="submit"><span>✦</span> Preparar minha criação <span class="arrow">↗</span></button>
+    <p class="privacy-note">Este protótipo não envia nem gera vídeos sozinho. Ele prepara um prompt e pode abrir um serviço externo quando você escolher.</p>
+  </form>
+</section>
+<section id="result" class="result hidden" aria-live="polite">
+  <div class="section-heading"><div><div class="eyebrow">02 / SEU PROMPT</div><h2>Pronto para gerar</h2></div><span class="status">● Preparado</span></div>
+  <p class="result-intro">Copie o prompt abaixo e cole em um serviço de geração de vídeo. Se usar imagem, envie também sua imagem de referência no serviço.</p>
+  <pre id="finalPrompt"></pre>
+  <div class="button-row"><button id="copyPrompt" class="primary">Copiar prompt</button><button id="downloadPrompt" class="secondary">Baixar .txt</button></div>
+  <h3>Escolha um serviço de IA</h3>
+  <div class="services">
+    <a class="service" href="https://huggingface.co/spaces" target="_blank" rel="noopener"><span class="service-logo">HF</span><span><b>Hugging Face Spaces</b><small>Experimente demos públicas; disponibilidade e limites variam.</small></span><span>↗</span></a>
+    <a class="service" href="https://github.com/" target="_blank" rel="noopener"><span class="service-logo">GH</span><span><b>GitHub</b><small>Para hospedar este site gratuitamente.</small></span><span>↗</span></a>
+  </div>
+  <p class="warning">Atenção: estes links não garantem geração gratuita nem disponibilidade de um modelo específico. Não insira chaves secretas em arquivos públicos do site.</p>
+</section>
+<section class="how">
+  <div class="eyebrow">SIMPLES E DIRETO</div><h2>Como funciona</h2>
+  <div class="how-grid"><article><span>01</span><h3>Descreva</h3><p>Escreva a cena, o personagem, a iluminação e a câmera.</p></article><article><span>02</span><h3>Prepare</h3><p>Escolha formato, duração e movimento de câmera.</p></article><article><span>03</span><h3>Gere fora do site</h3><p>Use um serviço de IA compatível e siga as regras dele.</p></article></div>
+</section>
+</main>
+<footer><div class="brand"><span class="brand-icon">✦</span><span>Maurício <b>AI Video</b></span></div><p>Protótipo independente · Não afiliado ao Kling AI.</p><p>© 2026 Maurício AI Video</p></footer>
+<div id="toast" role="status" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
