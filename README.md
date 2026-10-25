@@ -1,13 +1,15 @@
-# Maurício AI Video — versão corrigida
+# Maurício AI Video — interface melhorada
 
-Arquivos: `index.html`, `styles.css`, `app.js`.
+Inclui interface responsiva para celular, biblioteca temporária de imagens de personagens, montagem de cenas, prompt de vídeo, copiar e baixar .txt.
 
-## Publicar pelo Android
-1. Abra o repositório do site no GitHub e faça backup dos arquivos atuais.
-2. Edite `index.html` pelo lápis e substitua todo o conteúdo pelo arquivo de mesmo nome deste pacote.
-3. Repita para `styles.css` e `app.js`.
-4. Toque em **Commit changes** depois de cada arquivo.
-5. Aguarde a publicação e recarregue o site. Se necessário, teste numa aba anônima para evitar cache.
+## Limitação atual
+Esta é a interface do criador, ainda sem geração real de vídeo. As imagens selecionadas ficam apenas na sessão do navegador e não são enviadas a nenhum servidor. Para geração integrada, configure um provedor de vídeo e um backend (por exemplo, Cloudflare Worker). Guarde a chave da API como secret no backend; nunca no `app.js`, `index.html` ou em arquivo público.
 
-## Limitação importante
-Esta versão seleciona uma imagem e mostra uma prévia local. Ela não envia a imagem para um serviço nem gera vídeo automaticamente. Para gerar vídeo com IA, é necessária uma integração com um provedor e, normalmente, um backend seguro. Nunca coloque chaves secretas em arquivos públicos.
+## Publicar com segurança
+1. Faça uma cópia de segurança dos arquivos atuais.
+2. Extraia o ZIP.
+3. No repositório GitHub, substitua `index.html`, `styles.css` e `app.js` pelos arquivos desta pasta, na raiz publicada.
+4. Faça Commit changes e aguarde a publicação.
+5. Se não atualizar, recarregue ou teste em aba anônima.
+
+Não exclua o repositório nem as configurações do GitHub Pages.
